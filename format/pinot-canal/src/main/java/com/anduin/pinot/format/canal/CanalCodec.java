@@ -6,7 +6,7 @@ import java.util.Map;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class CdcCodec {
+public class CanalCodec {
   private static final ObjectMapper MAPPER = new ObjectMapper();
   private static final TypeReference<List<Map<String, Object>>> DATA_TYPE_REFERENCE = new TypeReference<List<Map<String, Object>>>() {
   };

@@ -35,7 +35,7 @@ public class CanalJSONRecordExtractor extends BaseRecordExtractor<Map<String, Ob
 
   @Override
   public GenericRow extract(Map<String, Object> from, GenericRow to) {
-    if (CdcCodec.extractIsDDL(from)) {
+    if (CanalCodec.extractIsDDL(from)) {
       to.putValue(GenericRow.SKIP_RECORD_KEY, true);
       return to;
     }
@@ -45,9 +45,9 @@ public class CanalJSONRecordExtractor extends BaseRecordExtractor<Map<String, Ob
       fields = from.keySet();
     }
 
-    List<Map<String, Object>> data = CdcCodec.extractData(from);
-    Object ts = convert(CdcCodec.extractTS(from));
-    boolean isDeleted = CdcCodec.extractEventType(from).equals("DELETE");
+    List<Map<String, Object>> data = CanalCodec.extractData(from);
+    Object ts = convert(CanalCodec.extractTS(from));
+    boolean isDeleted = CanalCodec.extractEventType(from).equals("DELETE");
 
     List<GenericRow> rows = new ArrayList<>();
     for (Map<String, Object> entry : data) {
