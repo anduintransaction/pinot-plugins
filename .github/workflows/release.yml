@@ -9,6 +9,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +26,18 @@ jobs:
           java-version: 11
           cache: "maven"
 
+      - name: Package with Maven
+        run: mvn --batch-mode package
+
       - name: Deploy with Maven
         run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generate_release_notes: false
+          files: |
+            **/target/*.jar
