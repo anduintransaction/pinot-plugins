@@ -6,7 +6,7 @@
 
   <groupId>com.anduin.pinot</groupId>
   <artifactId>anduin-pinot</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 
   <name>Anduin Pinot Plugins</name>
   <url>https://github.com/anduintransaction/pinot-plugins</url>
@@ -21,7 +21,7 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <pinot.version>0.11.0</pinot.version>
-    <shade.prefix>shaded</shade.prefix>
+    <shade.prefix>org.apache.pinot.shaded</shade.prefix>
   </properties>
 
   <dependencies>

@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.anduin.pinot.format</groupId>
     <artifactId>anduin-pinot-format</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <relativePath>..</relativePath>
   </parent>
 
